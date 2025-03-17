@@ -22,8 +22,10 @@ mongoose.connection.on('connected', () => {
 });
 
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(methodOverride('_method'));
-// app.use(morgan('dev'));
+app.use(morgan('dev'));
+app.use(express.static("public"));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -41,20 +43,15 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/vip-lounge', (req, res) => {
-  if (req.session.user) {
-    res.send(`Welcome to the party ${req.session.user.username}.`);
-  } else {
-    res.send('Sorry, no guests allowed.');
-  }
-});
+
 
 // middleware
 app.use('/auth', authController);
+
 app.use(isSignedIn);
 
-app.use("/recipes", recipesController);
-app.use("/ingredients", ingredientsController);
+app.use("/users/:userId/recipes", recipesController);
+app.use("/users/:userId/ingredients", ingredientsController);
 
 
 app.listen(port, () => {

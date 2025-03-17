@@ -1,0 +1,256 @@
+/* General body styles */
+body {
+    background-color: #f3e2cb;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container and overall layout */
+  .container {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+  
+  /* Hero section with background, padding, and shadow */
+  .hero {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading styles */
+  h1 {
+    color: #343a40;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Text styling for paragraphs and labels */
+  p {
+    color: #6c757d;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  /* Form styling */
+  .form {
+    margin-top: 20px;
+  }
+  
+  /* Form group for spacing */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Input field styling */
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  /* Button styles */
+  .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Text alignment for the submit buttons */
+  button[type="submit"] {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Additional styling for "Sign In" and "Sign Up" */
+  h1, .form-group label {
+    color: #343a40;
+  }
+  
+  /* Navbar styling */
+.navbar {
+    background-color: #6e2d14 !important;
+    border-bottom: 2px solid #d1ded2; /* Darker green bottom border */
+  }
+  
+  .navbar-brand {
+    font-family: 'Arial', sans-serif; /* Elegant font for brand name */
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f3ede0 !important
+  }
+  
+  .nav-link {
+    color: #e5e1d8 !important;
+    font-weight: 500;
+    padding: 10px 15px;
+  }
+  
+  .nav-link:hover {
+    color: #edf7e9 !important; /* Light green hover effect */
+    text-decoration: underline;
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #fff; /* White color for hamburger menu */
+  }
+  
+  /* Active Link Color */
+  .nav-link.active {
+    color: #e1dcd1 !important; /* Highlight active link with light green */
+    font-weight: 600;
+  }
+  
+  /* Search bar */
+  .form-control {
+    width: 200px; /* Limit width of search bar */
+  }
+  
+  .btn-outline-success {
+    border: 2px solid #d4e3d4;
+    color: #e2eee3;
+    background-color: transparent;
+  }
+  
+  .btn-outline-success:hover {
+    color: #fff;
+    background-color: #388E3C;
+    border-color: #dbe7dc;
+  }
+  
+  /* Mobile Navbar styling */
+  @media (max-width: 767px) {
+    .navbar {
+      padding: 10px;
+    }
+    
+    .navbar-nav {
+      text-align: center;
+    }
+  
+    .form-control {
+      width: 150px; /* Reduce the width of the search bar on mobile */
+    }
+  }
+  .btn{
+    margin-bottom: 20px;
+    background-color: #d46d31;
+  }
+  
+/* for new recipe page */
+/* General body styles */
+body {
+    background-color: #f3e2cb;
+    font-family: Arial, sans-serif;
+   
+    padding: 0;
+}
+
+/* Container and overall layout */
+.container {
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+/* Form container styling */
+.form-container {
+    margin-top: 3%;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+h1 {
+    color: #343a40;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Form styling */
+.recipe-form {
+    margin-top: 20px;
+}
+
+/* Form group for spacing */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Input field styling */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Button styles */
+.btn-submit {
+    background-color: #d46d31;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: #b95b2b;
+}
+
+/* Styling for ingredient options */
+.ingredient-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ingredient-option input {
+    margin-right: 10px;
+}
+
+#new-ingredient input {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 767px) {
+    .container {
+        width: 90%;
+    }
+    
+    .form-control {
+        padding: 10px;
+    }
+
+    .btn-submit {
+        font-size: 1rem;
+    }
+}
+

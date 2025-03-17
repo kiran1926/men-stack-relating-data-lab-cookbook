@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+
 const recipeSchema = new mongoose.Schema({
 
     name: {
@@ -11,13 +12,13 @@ const recipeSchema = new mongoose.Schema({
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId, 
-        ref: User,
+        ref: "User",
         required: true,
     },
-    ingredients: {
+    ingredients: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: Ingredient,
-    },
+        ref: "Ingredient",
+    }],
 });
 
 module.exports = mongoose.model("Recipe", recipeSchema);

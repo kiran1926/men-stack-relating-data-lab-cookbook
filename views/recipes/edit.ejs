@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Update Recipe</title>
+</head>
+
+<body>
+    <%- include("../partials/_navbar.ejs") %>
+
+    <div class="container mt-5">
+        <div class="card recipe-form-card">
+            <div class="card-body">
+                <h2 class="text-center mb-4">Update Recipe</h2>
+
+                <form action="/users/<%= user._id %>/recipes/<%= recipe._id %>/?_method=PUT" method="POST">
+                    
+                    <!-- Recipe Name -->
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Recipe Name:</label>
+                        <input type="text" class="form-control" name="name" value="<%= recipe.name %>" required>
+                    </div>
+
+                    <!-- Instructions -->
+                    <div class="mb-3">
+                        <label for="instructions" class="form-label">Instructions:</label>
+                        <textarea class="form-control" name="instructions" rows="4" required><%= recipe.instructions %></textarea>
+                    </div>
+
+                    <!-- Ingredients -->
+                    <div class="mb-3">
+                        <label class="form-label">Ingredients:</label>
+                        <div class="ingredient-list">
+                            <% let selectedIngredients = recipe.ingredients.map(i => i._id.toString()); %>
+                            <% ingredients.forEach(ingredient => { %>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="ingredients[]" value="<%= ingredient._id %>"
+                                        <% if (selectedIngredients.includes(ingredient._id.toString())) { %> checked <% } %> >
+                                    <label class="form-check-label"><%= ingredient.name %></label>
+                                </div>
+                            <% }); %>
+                        </div>
+                    </div>
+
+                    <!-- Add New Ingredient -->
+                    <div class="mb-3">
+                        <label for="newIngredient" class="form-label">Add New Ingredient:</label>
+                        <input type="text" class="form-control" name="newIngredient" placeholder="Enter a new ingredient">
+                    </div>
+
+                    <!-- Buttons -->
+                    <div>
+                        <button type="submit" class="btn btn-success">Update Recipe</button>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <a class="btn btn-danger" href="/users/<%= user._id %>/recipes">Cancel</a>
+                        </div>
+                        
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
